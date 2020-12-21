@@ -1,4 +1,4 @@
-package com.fidelity.am.api.model;
+package com.fidelity.am.model;
 
 
 public class Denomination {

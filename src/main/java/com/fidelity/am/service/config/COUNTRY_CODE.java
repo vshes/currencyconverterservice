@@ -7,6 +7,8 @@ public enum COUNTRY_CODE {
 
     USA("United States of America","USA"),
     UK(" United Kingdom","UK"),
+    CAN("Canada","CAN"),
+    EU("Europe","EU"),
     IND("India","IND");
 
     private static final Map<String, String> _COUNTRY_CODE_NAMES = new HashMap<>();

@@ -1,7 +1,7 @@
 package com.fidelity.am.impl.factory;
 
 import com.fidelity.am.api.denomination.DenominationLookup;
-import com.fidelity.am.api.model.Denomination;
+import com.fidelity.am.model.Denomination;
 import com.fidelity.am.impl.factory.gen.DenominationGenerator;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.fidelity.am.impl.format;
 
 import com.fidelity.am.api.FormatResponse;
-import com.fidelity.am.api.model.DenominationResponse;
+import com.fidelity.am.model.DenominationResponse;
 
 import java.util.List;
 

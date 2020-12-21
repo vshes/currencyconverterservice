@@ -14,9 +14,10 @@ public final class FormatFactory {
         FormatResponse formatResponse = null;
         List<FORMAT_TYPES> _valid_formats = Arrays.asList(FORMAT_TYPES.values());
         FORMAT_TYPES format_type = _valid_formats.stream().filter(x -> x.toString().equals(type.toString())).collect(Collectors.toList()).get(0);
+        if(format_type !=  null){
 
-        format_type.toString();
-        if (format_type.equals(type)) {
+        }
+        if (type.toString().equals("BASIC")) {
             formatResponse = new BasicFormatter();
         }
         return formatResponse;

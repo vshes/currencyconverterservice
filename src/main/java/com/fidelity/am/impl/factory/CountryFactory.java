@@ -1,6 +1,6 @@
 package com.fidelity.am.impl.factory;
 
-import com.fidelity.am.api.model.Country;
+import com.fidelity.am.model.Country;
 import com.fidelity.am.service.config.COUNTRY_CODE;
 import com.fidelity.am.impl.factory.gen.CountryLookupTable;
 
