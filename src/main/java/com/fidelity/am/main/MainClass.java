@@ -5,42 +5,45 @@ import com.fidelity.am.api.CurrencyConverter;
 import com.fidelity.am.exception.InvalidCountryException;
 import com.fidelity.am.model.Country;
 import com.fidelity.am.service.impl.CurrencyConverterService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class MainClass {
 
 
+    private static Logger logger = LoggerFactory.getLogger(MainClass.class);
+
     public static void main(String[] args) {
 
-
-        System.out.println("Application starting ..");
-        System.out.println("Enter the below details ");
-
+        logger.info("Application starting ...");
         Scanner scanner = new Scanner(System.in);
         String countryName = null;
         String countryCode = "";
         String currency = "";
         int value = 0;
-        System.out.println("Enter the Country information name -  [ United States, United Kingdom , European Union, India]: ");
+        logger.info("Enter the Country information name - [ United States, United Kingdom , European Union, India]: \n");
         countryName = scanner.nextLine();
-        System.out.println("Enter the Country information country code -  [ USA , UK, EU, IND]: ");
+        logger.info("Enter the Country information country code -  [ USA , UK, EU, IND]: \n");
         countryCode = scanner.nextLine();
-        System.out.println("Enter the Country information  currency [ USD , GBP, EURO, INR ]: ");
+        logger.info("Enter the Country information  currency [ USD , GBP, EURO, INR ]: \n");
         currency = scanner.nextLine();
-        System.out.println("Enter the value of the Change in decimal number: ");
+        logger.info("Enter the value of the Change in decimal number: \n");
         value = scanner.nextInt();
         scanner.close();
-        System.out.println("Country Name " + countryName + "\t value entered is " + value);
+        logger.info("Country Name " + countryName + "\t value entered is " + value);
         Country country = new Country(countryCode, countryName, currency);
         CurrencyConverter currencyConverter = new CurrencyConverterService();
-        String response ;
+        String response;
         try {
             response = (String) currencyConverter.convertCurrency(country, value);
-            System.out.println("\n\t" + response +"\n\t");
+            logger.info("\n\t" + response + "\n\t");
         } catch (InvalidCountryException e) {
             e.printStackTrace();
         }
+        logger.info("Application completed");
+        logger.info("************************");
 
     }
 }
